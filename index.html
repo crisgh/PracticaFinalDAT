@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>aparcaMadrid</title>
+        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel="shortcut icon"  href="images/icono-parking.png" />
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet"/>
+        <!-- Custom CSS in order to customize Boostrap CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <link href="css/custom.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+      <button id="authorize-button" style="visibility: hidden">Authorize</button>
+        <div class="container">
+            <nav class="navbar navbar-default navbar navbar-gr">
+                <div class="container-fluid">
+                    <a class="banner-logo" href="#"><img src="images/parking-2.svg" alt="parking logo"></a>
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div id="navegacion" class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a id="parking" href="#" class="disabled">aparcaMADRID </a></li>
+                            <li><a id="colecciones" href="#" class="disabled">Gestion de colecciones</a></li>
+                            <li><a id="instalaciones" href="#" class="disabled">Gestion de instalaciones</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                              <li><a id="json" href="#">Cargar JSON</a></li>
+                              <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tus Favoritos <i class="fa fa-star-o" aria-hidden="true"></i></a>
+                                <ul class="dropdown-menu">
+                                  <li><a id="guardarColeccion" href="#">Guardar colección</a></li>
+                                  <li><a id="cargarColeccion" href="#">Cargar colección</a></li>
+                                </ul>
+                              </li>
+                        </ul>
+                      </div>
+
+                    <!-- /.navbar-collapse -->
+                </div>
+
+                <!-- /.container-fluid -->
+            </nav>
+            <!-- Modal -->
+
+            <div class="container">
+                          <div class="modal fade" id="modalGuardar" role="dialog">
+                            <div class="modal-dialog">
+
+                              <!-- Modal content-->
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 style="color:green;"><span class="fa fa-cloud-upload"></span> Guardar colección</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <form role="form">
+                                    <div class="form-group">
+                                <!---  <form id ="guardarForm" role="form">
+                                    <div class="form-group"> -->
+                                      <label for="nombreFicheroDestino">Nombre de fichero</label>
+                                      <input type="text" class="form-control" id="nombreFicheroDestino">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="repositorioDestino">Repositorio destino</label>
+                                      <input type="text" class="form-control" id="repositorioDestino">
+                                    </div>
+                                    <div class="form-group">
+                                      <label for="tokenGithub">GitHub Token</label>
+                                      <input type="text" class="form-control" id="tokenGithubDestino">
+                                    </div>
+                                    <button type="submit" id="guardarForm" class="btn btn-default">Guardar</button>
+
+                                  </form>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                          <!-- Modal -->
+                            <div class="modal fade" id="modalCargar" role="dialog">
+                              <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 style="color:blue;"><span class="fa fa-cloud-download"></span> Cargar colección</h4>
+                                  </div>
+                                  <div class="modal-body">
+                                    <form role="form">
+                                      <div class="form-group">
+                                        <label for="nombreFicheroOrigen">Nombre de fichero</label>
+                                        <input type="text" class="form-control" id="nombreFichero">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="repositorioOrigen">Repositorio origen</label>
+                                        <input type="text" class="form-control" id="repositorioOrigen">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="tokenGithub">GitHub Token</label>
+                                        <input type="text" class="form-control" id="tokenGithubOrigen">
+                                      </div>
+                                      <button type="submit" id="cargarForm" class="btn btn-default">Cargar</button>
+
+                                    </form>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+                <div class="row col-xs-4 col-xs-12">
+
+                    <div class="panel panel-success parking-list">
+                        <div class="panel-heading">Listado de aparcamientos</div>
+                        <div id="parking-list" class="panel-body">Aún no se ha cargado la información de los aparcamientos. Debe pulsar en "Cargar JSON" en el menú superior.</div>
+
+                    </div>
+                </div>
+
+
+
+            <div class="row">
+                <div class="col-sm-8 col-xs-12">
+                  <div id="mapid"></div>
+                </div>
+
+                <div id="addguser" class="col-xs-4 hidden">
+                    <div class="panel panel-primary parking-list">
+                        <div class="panel-heading">Añadir estacionado: Google+ ID</div>
+                        <div class="panel-body">
+                          <!--<form id="newguest" class="form-inline" action="">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="nuevoAlojado" placeholder="ID de Google+ a añadir">
+                            </div>-->
+                            <button id="newguest" type="submit" class="btn btn-default">Conectar con el servidor </button>
+                            <br>ID Usuarios :
+                            <div id="output"></div>
+
+                        </div>
+                    </div>
+                </div>
+                <div id="guestlist" class="col-xs-4 hidden">
+                    <div class="panel panel-primary parking-list">
+                        <div class="panel-heading">Listado de estacionados</div>
+                        <div  class="panel-body">
+                          <div id="guestlistbody" class="list-group parking-list">
+                          </div>
+                      </div>
+                    </div>
+                </div>
+
+
+
+                <div id="parkingcoleccionlista" class="col-sm-8 col-xs-4 hidden">
+                  <div class="panel panel-primary parking-list"  class="panel panel-success parking-list">
+                    <div id = "nombreColec" class="panel-heading">Colección seleccionada</div>
+                      <div  class="panel-body">
+                        <div id="parkingcoleccionbody" class="list-group parking-list">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="coleccioneslista" class="col-sm-8 col-xs-4 hidden">
+                    <div class="panel panel-primary parking-list">
+                        <div class="panel-heading">Lista de colecciones</div>
+                        <div class="panel-body">
+                          <form id="nuevacoleccion" class="form-inline" action="">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="nombreNuevaColeccion" placeholder="Nombre de colección">
+                            </div>
+                            <button type="submit" class="btn btn-default">Crear</button>
+
+                          </form>
+                          <br>
+                           <div class="list-group" id="listacolecciones">
+                          </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+              <div id="subcontent" class="container">
+                <div id="parkinfo" class="panel panel-danger hidden">
+                  <div class="panel-heading"><h5 id="parkingname"></h5></div>
+                    <div class="panel-body">
+                      <div class="col-md-6 col-xs-12">
+                        <h5 id="descripcion"></h5>
+                      </div>
+
+                        <div id="carouselhtml" class="col-sm-6 col-xs-12">
+                        </div>
+                    </div>
+                  <div id="direccion" class='panel-footer'> </div>
+                </div>
+              </div>
+            </div>
+
+                <footer>
+                		<div class="footer" id = "foot">
+                			<hr>
+                			<p>&copy; CursosWeb 2017</p>
+                			<p> Cristina Gallego Herrero <a id="code-link" href="https://github.com/crisgh/PracticaFinalDAT">Código fuente de esta página</a></p><hr>
+                		<br>
+                			<div class="clearfix visible-xs-block"></div>
+                		</div>
+                	</footer>
+
+        <!-- jQuery and JS files  -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://apis.google.com/js/client.js?onload=handleClientLoad"></script>
+        <script src="js/github.js"></script>
+        <script src="js/custom.js"></script>
+
+        <!--<script src="js/github.js"></script>-->
+
+
+    </body>
+</html>
