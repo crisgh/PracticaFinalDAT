@@ -1,0 +1,88 @@
+{
+  "colec": [
+    {
+      "id": "micoleccion",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento para residentes. Brescia",
+          "Aparcamiento para residentes. Burgo de Osma",
+          "Aparcamiento para residentes. Paseo de Pintor Rosales III",
+          "Aparcamiento para residentes. Parque de Santa María"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Antje Gerstenecker",
+            "imagen": "https://lh3.googleusercontent.com/-3hK4JcilxR4/AAAAAAAAAAI/AAAAAAAAAD8/CzW6GgHY9W0/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Yvonne Melton",
+            "imagen": "https://lh3.googleusercontent.com/-zX6FIQiqkCA/AAAAAAAAAAI/AAAAAAAAEvc/F-DJXNr9CFU/photo.jpg?sz=50"
+          }
+        ]
+      }
+    },
+    {
+      "id": "micoleccion2",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento para residentes. Brescia",
+          "Aparcamiento para residentes. Burgo de Osma",
+          "Aparcamiento para residentes. Paseo de Pintor Rosales III",
+          "Aparcamiento para residentes. Parque de Santa María"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Antje Gerstenecker",
+            "imagen": "https://lh3.googleusercontent.com/-3hK4JcilxR4/AAAAAAAAAAI/AAAAAAAAAD8/CzW6GgHY9W0/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Yvonne Melton",
+            "imagen": "https://lh3.googleusercontent.com/-zX6FIQiqkCA/AAAAAAAAAAI/AAAAAAAAEvc/F-DJXNr9CFU/photo.jpg?sz=50"
+          }
+        ]
+      }
+    },
+    {
+      "id": "micoleccion3",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento para residentes. Brescia",
+          "Aparcamiento para residentes. Burgo de Osma",
+          "Aparcamiento para residentes. Paseo de Pintor Rosales III",
+          "Aparcamiento para residentes. Parque de Santa María"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Antje Gerstenecker",
+            "imagen": "https://lh3.googleusercontent.com/-3hK4JcilxR4/AAAAAAAAAAI/AAAAAAAAAD8/CzW6GgHY9W0/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Yvonne Melton",
+            "imagen": "https://lh3.googleusercontent.com/-zX6FIQiqkCA/AAAAAAAAAAI/AAAAAAAAEvc/F-DJXNr9CFU/photo.jpg?sz=50"
+          }
+        ]
+      }
+    }
+  ]
+}
