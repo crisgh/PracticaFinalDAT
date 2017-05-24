@@ -1,0 +1,76 @@
+{
+  "colec": [
+    {
+      "id": "micoleccion",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento para residentes. Andorra II",
+          "Aparcamiento para residentes. Oporto",
+          "Aparcamiento mixto. San Cayetano",
+          "Aparcamiento mixto. Felipe II"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Dennis Heal",
+            "imagen": "https://lh4.googleusercontent.com/-4g35pFLrBlw/AAAAAAAAAAI/AAAAAAAAsOo/ZcDPxEubFfo/photo.jpg?sz=50"
+          }
+        ]
+      }
+    },
+    {
+      "id": "micoleccion2",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento para residentes. Andorra II",
+          "Aparcamiento para residentes. Oporto",
+          "Aparcamiento mixto. San Cayetano",
+          "Aparcamiento mixto. Felipe II"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Dennis Heal",
+            "imagen": "https://lh4.googleusercontent.com/-4g35pFLrBlw/AAAAAAAAAAI/AAAAAAAAsOo/ZcDPxEubFfo/photo.jpg?sz=50"
+          }
+        ]
+      }
+    },
+    {
+      "id": "micoleccion3",
+      "parkings": {
+        "parking": [
+          "Aparcamiento mixto. Arquitecto Ribera",
+          "Aparcamiento mixto. Casino de la Reina",
+          "Aparcamiento mixto. Avenida de América (intercambiador)",
+          "Aparcamiento para residentes. Andorra II",
+          "Aparcamiento para residentes. Oporto",
+          "Aparcamiento mixto. San Cayetano",
+          "Aparcamiento mixto. Felipe II"
+        ],
+        "usuarios": [
+          {
+            "nombre": "Spain Attractions",
+            "imagen": "https://lh5.googleusercontent.com/-mULmy9YCClI/AAAAAAAAAAI/AAAAAAAABSw/TY-A0QrKVAw/photo.jpg?sz=50"
+          },
+          {
+            "nombre": "Dennis Heal",
+            "imagen": "https://lh4.googleusercontent.com/-4g35pFLrBlw/AAAAAAAAAAI/AAAAAAAAsOo/ZcDPxEubFfo/photo.jpg?sz=50"
+          }
+        ]
+      }
+    }
+  ]
+}
